@@ -40,7 +40,7 @@ fn app() -> Command {
                 .short('e')
                 .long("event")
                 .value_name("EVENT")
-                .value_parser(["algorithmia"])
+                .value_parser(["algorithmia", "echoes-of-enigmatus"])
                 .help("Selects the event to run"),
         )
         .arg(

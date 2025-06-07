@@ -41,6 +41,7 @@ pub fn run(event: Option<String>, quest: Option<u32>) -> io::Result<()> {
     };
     match &*event {
         "algorithmia" => algorithmia::run_quest(quest_prompt()?),
+        "echoes-of-enigmatus" => echoes_of_enigmatus::run_quest(quest_prompt()?),
         _ => unimplemented!("Event {}", event),
     }
 }

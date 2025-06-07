@@ -8,9 +8,11 @@ rust-version = "1.83.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-extended_io = { git = "https://github.com/dragonrider7225/extended_io.git", version = "^0.2.0", tag = "v0.2.0" }
 clap = { version = "^4.5.23", features = ["wrap_help"] }
+extended_io = { git = "https://github.com/dragonrider7225/extended_io.git", version = "^0.2.0", tag = "v0.2.0" }
+
 algorithmia = { path = "algorithmia" }
+echoes-of-enigmatus = { path = "echoes-of-enigmatus" }
 
 [workspace]
-members = ["algorithmia"]
+members = ["algorithmia", "dependencies", "echoes-of-enigmatus"]
