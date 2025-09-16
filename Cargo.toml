@@ -13,6 +13,7 @@ extended_io = { git = "https://github.com/dragonrider7225/extended_io.git", vers
 
 algorithmia = { path = "algorithmia" }
 echoes-of-enigmatus = { path = "echoes-of-enigmatus" }
+the-entertainment-hub = { path = "the-entertainment-hub" }
 
 [workspace]
-members = ["algorithmia", "dependencies", "echoes-of-enigmatus"]
+members = ["algorithmia", "dependencies", "echoes-of-enigmatus", "the-entertainment-hub"]

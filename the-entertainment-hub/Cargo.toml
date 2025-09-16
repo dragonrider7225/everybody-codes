@@ -1,0 +1,9 @@
+[package]
+name = "the-entertainment-hub"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+itertools = "0.14.0"
+nom = "7.1.3"
+nom-supreme = "0.8.0"
