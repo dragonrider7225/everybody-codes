@@ -120,7 +120,7 @@ impl BalloonWheel {
         let front_balloon = last.pop().unwrap();
         self.calculated.push(Some(last));
         let mut popped = Colors(vec![front_balloon]);
-        if front_balloon == bolt_color && self.num_balloons % 2 == 0 {
+        if front_balloon == bolt_color && self.num_balloons.is_multiple_of(2) {
             let separator_length = (self.num_balloons - 2) / 2;
             let definite_nones = separator_length / self.base.len();
             let num_balloons_skipped = definite_nones * self.base.len();

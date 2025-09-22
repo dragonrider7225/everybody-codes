@@ -247,7 +247,7 @@ impl<Rank, Info> Tree<Rank, Info> {
         }
     }
 
-    fn widest_row(&self) -> WidestRow<Rank, Info> {
+    fn widest_row(&self) -> WidestRow<'_, Rank, Info> {
         WidestRow::new(self)
     }
 }
