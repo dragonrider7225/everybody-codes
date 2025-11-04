@@ -11,7 +11,7 @@ fn part2(_input: &mut dyn BufRead) -> io::Result<u32> {
     todo!("Event ???? Quest 16 Part 2")
 }
 
-fn part2(_input: &mut dyn BufRead) -> io::Result<u32> {
+fn part3(_input: &mut dyn BufRead) -> io::Result<u32> {
     todo!("Event ???? Quest 16 Part 3")
 }
 
