@@ -43,6 +43,7 @@ fn app() -> Command {
                 .value_parser([
                     "algorithmia",
                     "echoes-of-enigmatus",
+                    "song-of-ducks-and-dragons",
                     "the-entertainment-hub",
                 ])
                 .help("Selects the event to run"),
