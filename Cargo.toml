@@ -16,5 +16,9 @@ echoes-of-enigmatus = { path = "echoes-of-enigmatus" }
 song-of-ducks-and-dragons = { path = "song-of-ducks-and-dragons" }
 the-entertainment-hub = { path = "the-entertainment-hub" }
 
+[features]
+default = []
+write_images = ["song-of-ducks-and-dragons/write_images"]
+
 [workspace]
 members = ["algorithmia", "dependencies", "echoes-of-enigmatus", "song-of-ducks-and-dragons", "the-entertainment-hub"]
