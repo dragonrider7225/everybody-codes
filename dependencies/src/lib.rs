@@ -23,6 +23,7 @@
 pub use nom;
 pub use nom_supreme;
 pub use num;
+pub use priority_queue;
 
 /// Implementations of common mathematical operations.
 pub mod math;
