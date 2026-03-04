@@ -43,6 +43,7 @@ fn app() -> Command {
                 .value_parser([
                     "algorithmia",
                     "echoes-of-enigmatus",
+                    "melody-made-of-code",
                     "song-of-ducks-and-dragons",
                     "the-entertainment-hub",
                 ])
