@@ -27,3 +27,8 @@ pub use priority_queue;
 
 /// Implementations of common mathematical operations.
 pub mod math;
+
+/// A wrapper around string slices that guarantees that two `PooledString`s represent the same
+/// sequence of bytes if and only if they wrap the same region of memory.
+pub mod pooled_string;
+pub use pooled_string::PooledString;
