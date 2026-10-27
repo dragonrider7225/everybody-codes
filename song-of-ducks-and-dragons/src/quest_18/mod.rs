@@ -285,7 +285,7 @@ fn part3(input: &mut dyn BufRead, network_out: impl Write) -> io::Result<usize> 
                     Plant::Connections { connections, .. } => Some(&connections[..]),
                 })
                 .flatten()
-                .filter_map(|&(source, strength)| Some(strength).filter(|_| source == id))
+                .filter_map(|&(source, strength)| (source == id).then_some(strength))
                 .fold(None, |acc, strength| {
                     let this = strength.cmp(&0);
                     match acc {

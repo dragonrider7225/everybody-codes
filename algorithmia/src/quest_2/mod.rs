@@ -178,16 +178,16 @@ fn part3(input: &mut dyn BufRead) -> io::Result<usize> {
                 .map(move |column| (column, row))
         };
         let upward = |(column, row)| {
-            Some(0..word.len())
-                .filter(|_| word.len() <= row + 1)
+            (word.len() <= row + 1)
+                .then_some(0..word.len())
                 .into_iter()
                 .flatten()
                 .map(move |delta_row| row - delta_row)
                 .map(move |row| (column, row))
         };
         let downward = |(column, row)| {
-            Some(0..word.len())
-                .filter(|_| row + word.len() <= rows.len())
+            (row + word.len() <= rows.len())
+                .then_some(0..word.len())
                 .into_iter()
                 .flatten()
                 .map(move |delta_row| (row + delta_row) % rows.len())

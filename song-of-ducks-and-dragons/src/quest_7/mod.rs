@@ -67,11 +67,10 @@ fn part2(input: &mut dyn BufRead) -> io::Result<usize> {
         .map(|(idx, name)| (idx + 1, name))
         .filter_map(|(idx, name)| {
             let name_bytes = name.as_bytes();
-            Some(idx).filter(|_| {
-                name_bytes
-                    .windows(2)
-                    .all(|window| rules[&window[0]].contains(&window[1]))
-            })
+            name_bytes
+                .windows(2)
+                .all(|window| rules[&window[0]].contains(&window[1]))
+                .then_some(idx)
         })
         .sum())
 }

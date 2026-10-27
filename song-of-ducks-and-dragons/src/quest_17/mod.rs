@@ -70,7 +70,7 @@ fn volcano_effect(grid: &[Vec<Tile>], radius: usize) -> usize {
                 .copied()
                 .enumerate()
                 .filter_map(move |(col_idx, tile)| {
-                    Some((col_idx, row_idx)).filter(|_| tile == Tile::Volcano)
+                    (tile == Tile::Volcano).then_some((col_idx, row_idx))
                 })
         })
         .next()
@@ -184,7 +184,7 @@ fn part3(input: &mut dyn BufRead) -> io::Result<usize> {
                 .copied()
                 .enumerate()
                 .filter_map(move |(col_idx, tile)| {
-                    Some((col_idx, row_idx)).filter(|_| matches!(tile, Tile::Volcano))
+                    matches!(tile, Tile::Volcano).then_some((col_idx, row_idx))
                 })
         })
         .next()
@@ -197,7 +197,7 @@ fn part3(input: &mut dyn BufRead) -> io::Result<usize> {
                 .copied()
                 .enumerate()
                 .filter_map(move |(col_idx, tile)| {
-                    Some((col_idx, row_idx)).filter(|_| matches!(tile, Tile::Start))
+                    matches!(tile, Tile::Start).then_some((col_idx, row_idx))
                 })
         })
         .next()

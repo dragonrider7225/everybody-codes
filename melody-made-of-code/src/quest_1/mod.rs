@@ -62,9 +62,7 @@ fn part1(input: &mut dyn BufRead) -> io::Result<u32> {
         .lines()
         .map(|line| line.and_then(|line| parse_line(&line)))
         .filter_map(|parsed_line| match parsed_line {
-            Ok((id, Color { red, green, blue })) => {
-                Some(Ok(id)).filter(|_| green > red && green > blue)
-            }
+            Ok((id, Color { red, green, blue })) => (green > red && green > blue).then_some(Ok(id)),
             Err(e) => Some(Err(e)),
         })
         .sum()

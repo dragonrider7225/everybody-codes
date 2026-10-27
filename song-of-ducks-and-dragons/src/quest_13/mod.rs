@@ -63,6 +63,10 @@ fn part2(input: &mut dyn BufRead, num_moves: usize) -> io::Result<u32> {
             })
         })
         .collect::<io::Result<Vec<_>>>()?;
+    #[expect(
+        clippy::single_range_in_vec_init,
+        reason = "These elements are meant to be ranges, not numbers"
+    )]
     let mut dial_right = vec![1..=1];
     let mut dial_left = vec![];
     let mut dial = nums.into_iter();

@@ -68,19 +68,17 @@ impl Board {
             .enumerate()
             .flat_map(|(row_idx, row)| {
                 row.iter().enumerate().filter_map(move |(col_idx, tile)| {
-                    Some(Position {
+                    matches!(
+                        tile,
+                        Tile::Entity(Entity::Dragon)
+                            | Tile::Hideout {
+                                dragon: Some(_),
+                                ..
+                            }
+                    )
+                    .then_some(Position {
                         row: row_idx,
                         col: col_idx,
-                    })
-                    .filter(|_| {
-                        matches!(
-                            tile,
-                            Tile::Entity(Entity::Dragon)
-                                | Tile::Hideout {
-                                    dragon: Some(_),
-                                    ..
-                                }
-                        )
                     })
                 })
             })
